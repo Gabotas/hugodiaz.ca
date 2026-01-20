@@ -4,12 +4,18 @@
   box-sizing: border-box;
 }
 
+:root {
+  --font-sans: 'Poppins', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Roboto Slab', serif;
+}
+
 body {
-  font-family: system-ui, sans-serif;
+  font-family: var(--font-sans);
   background: #faf9f6;
   color: #1a1a1a;
   line-height: 1.6;
 }
+
 
 /* HEADER */
 .header {
@@ -33,10 +39,17 @@ body {
   width: 40px;
 }
 
+.logo span {
+  font-family: var(--font-serif);
+  font-weight: 600;
+}
+
 .nav a {
   margin-left: 24px;
   text-decoration: none;
   color: #1a1a1a;
+  font-weight: 500;
+  font-family: var(--font-sans);
   font-weight: 500;
 }
 
@@ -54,6 +67,7 @@ body {
 .hero-text p {
   margin-bottom: 24px;
   font-size: 1.1rem;
+  font-family: var(--font-sans);
 }
 
 .hero-text strong {
@@ -68,6 +82,9 @@ body {
   border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 /* IMAGE */
