@@ -97,7 +97,21 @@ body {
   max-width: 380px;
   border-radius: 12px;
   background: #2f9c8c;
-  padding: 20px;
+}
+
+.hero-image figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.photo-caption {
+  margin-top: 12px;
+  font-size: 0.85rem;
+  color: #6b6b6b;
+  font-style: italic;
+  text-align: center;
+  max-width: 320px;
 }
 
 .stack {
