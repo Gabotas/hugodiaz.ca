@@ -168,27 +168,38 @@ img {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  margin-bottom: 40px;
+  margin: 0 auto 40px;
+  max-width: 420px;
+  width: 100%;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
 }
 
 .contact-form input,
 .contact-form textarea {
-  padding: 14px;
-  border-radius: 10px;
   border: 1px solid #ddd;
-  font-family: var(--font-sans);
-  font-size: 0.95rem;
+}
+
+.contact-form textarea {
+  resize: vertical;
 }
 
 .contact-form button {
   background: #a33643;
   color: white;
   border: none;
-  padding: 14px;
-  border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
 }
+
 
 .socials {
   display: flex;
