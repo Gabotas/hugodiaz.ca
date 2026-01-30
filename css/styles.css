@@ -219,6 +219,32 @@ img {
   opacity: 0.6;
 }
 
+.github-links {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.github-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #1a1a1a;
+  font-size: 0.9rem;
+}
+
+.github-links svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+  transition: opacity 0.2s ease;
+}
+
+.github-links a:hover svg {
+  opacity: 0.6;
+}
+
 .footer-copy {
   font-size: 0.8rem;
   color: #888;
