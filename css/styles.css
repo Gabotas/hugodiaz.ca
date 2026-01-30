@@ -25,7 +25,7 @@ img {
   display: block;
 }
 
-/* LAYOUT CONTAINER (re using max-width) */
+/* LAYOUT CONTAINER */
 .header,
 .hero {
   max-width: 1200px;
@@ -94,7 +94,7 @@ img {
 .btn {
   display: inline-block;
   background: #a33643;
-  color: white;
+  color: #fff;
   padding: 14px 24px;
   border-radius: 10px;
   text-decoration: none;
@@ -135,10 +135,76 @@ img {
   max-width: 320px;
 }
 
-.stack {
-  margin-top: 16px;
-  font-size: 0.85rem;
+/* WHAT I DO */
+.what-i-do {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px 10px;
+  grid-column: 1 / -1;
+}
+
+.what-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.what-i-do h2 {
+  font-family: var(--font-serif);
+  margin-bottom: 12px;
+}
+
+.what-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.what-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: #f8f7f5;
+  border: 1px solid #e6e3dd;
+  border-radius: 16px;
+  padding: 18px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.what-card:hover,
+.what-card:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.what-card h3 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.what-card p {
   color: #6b6b6b;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.card-action {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  opacity: 0.75; /* visible by default (mobile-first) */
+}
+
+/* hide action on desktop; show on hover/focus */
+@media (min-width: 768px) {
+  .card-action {
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+
+  .what-card:hover .card-action,
+  .what-card:focus-visible .card-action {
+    opacity: 0.75;
+  }
 }
 
 /* FOOTER */
@@ -194,12 +260,11 @@ img {
 
 .contact-form button {
   background: #a33643;
-  color: white;
+  color: #fff;
   border: none;
   font-weight: 600;
   cursor: pointer;
 }
-
 
 .socials {
   display: flex;
@@ -262,58 +327,11 @@ img {
   width: 1px;
   height: 1px;
   padding: 0;
-  margin: -1px;
+  margin: 0;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
-}
-
-/* WHAT I DO */
-.what-i-do {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 24px 10px;
-}
-
-.what-inner {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.what-i-do h2 {
-  font-family: var(--font-serif);
-  margin-bottom: 12px;
-}
-
-.what-intro {
-  color: #6b6b6b;
-  margin-bottom: 22px;
-  max-width: 75ch;
-}
-
-.what-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-}
-
-.what-card {
-  background: #f8f7f5;
-  border: 1px solid #e6e3dd;
-  border-radius: 16px;
-  padding: 18px;
-}
-
-.what-card h3 {
-  font-size: 1rem;
-  margin-bottom: 8px;
-}
-
-.what-card p {
-  color: #6b6b6b;
-  font-size: 0.95rem;
-  line-height: 1.5;
 }
 
 /* Responsive */
@@ -327,7 +345,6 @@ img {
   }
 }
 
-/* RESPONSIVE */
 @media (max-width: 1199px) {
   .hero {
     gap: 48px;
@@ -363,7 +380,7 @@ img {
 
 @media (max-width: 767px) {
   .header {
-    padding: 18px 18px;
+    padding: 18px;
   }
 
   .hero {
@@ -403,7 +420,7 @@ img {
   }
 }
 
-/* Nav hidden below 900px*/
+/* Nav hidden below 900px */
 @media (max-width: 900px) {
   .nav {
     display: none;
