@@ -100,7 +100,7 @@ body {
   width: 100%;
   max-width: 380px;
   border-radius: 12px;
-  background: #2f9c8c;
+  /* background: #2f9c8c; */
 }
 
 .hero-image figure {
