@@ -219,6 +219,12 @@ img {
   opacity: 0.6;
 }
 
+/* Optical alignment: Instagram icon sits higher than the others */
+.socials a[aria-label="Instagram"] svg {
+  display: block;
+  transform: translateY(4px);
+}
+
 .github-links {
   display: flex;
   gap: 16px;
