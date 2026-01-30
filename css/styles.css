@@ -88,6 +88,10 @@ body {
 }
 
 /* IMAGE */
+.image-bg {
+  background-color: #cd1111;
+}
+
 .hero-image {
   text-align: center;
 }
