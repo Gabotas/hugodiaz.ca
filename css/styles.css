@@ -269,6 +269,63 @@ img {
   border: 0;
 }
 
+/* WHAT I DO */
+.what-i-do {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px 10px;
+}
+
+.what-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.what-i-do h2 {
+  font-family: var(--font-serif);
+  margin-bottom: 12px;
+}
+
+.what-intro {
+  color: #6b6b6b;
+  margin-bottom: 22px;
+  max-width: 75ch;
+}
+
+.what-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.what-card {
+  background: #f8f7f5;
+  border: 1px solid #e6e3dd;
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.what-card h3 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.what-card p {
+  color: #6b6b6b;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .what-i-do {
+    padding: 20px 24px 0;
+  }
+
+  .what-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* RESPONSIVE */
 @media (max-width: 1199px) {
