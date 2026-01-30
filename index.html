@@ -14,19 +14,34 @@
 </head>
 
 <body>
+  <div id="top"></div>
   <!-- HEADER -->
-  <header class="header">
-    <div class="logo">
-      <img src="/images/logo-hgda-vectorized.svg" alt="Hugo Diaz Logo">
-      <span>Hugo Diaz</span>
-    </div>
+<header class="header">
+  <a href="/" class="logo">
+    <img src="/images/logo-hgda-vectorized.svg"   alt="Hugo Diaz logo">
+    <span>Hugo Diaz</span>
+  </a>
 
-    <nav class="nav" aria-label="Primary navigation">
-      <a href="#about">About Me</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <button
+    class="menu-toggle"
+    aria-expanded="false"
+    aria-controls="primary-nav"
+    aria-label="Toggle navigation"
+  >
+    ☰
+  </button>
+
+  <nav
+    id="primary-nav"
+    class="nav"
+    aria-label="Primary navigation"
+  >
+    <a href="#about">About me</a>
+    <a href="#what">What I do</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
 
   <!-- HERO -->
   <main class="hero">
@@ -47,7 +62,8 @@
     </section>
 
     <!-- WHAT I DO -->
-    <section class="what-i-do" id="about">
+    <section class="what-i-do" id="what">
+
       <div class="what-inner">
         <h2>What I do</h2>
 
@@ -167,5 +183,6 @@
       <p class="footer-copy">© 2026 Hugo Diaz. All rights reserved.</p>
     </div>
   </footer>
+  <a href="#top" class="to-top" aria-label="Back to top">↑</a>
 </body>
 </html>
