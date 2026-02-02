@@ -15,37 +15,53 @@
 
 <body>
   <div id="top"></div>
+
   <!-- HEADER -->
-<header class="header">
-  <a href="/" class="logo">
-    <img src="images/logo-hgda-vectorized.svg"   alt="Hugo Diaz logo">
-    <span>Hugo Diaz</span>
-  </a>
+  <header class="header">
+    <a href="/" class="logo">
+      <img src="images/logo-hgda-vectorized.svg" alt="Hugo Diaz logo">
+      <span>Hugo Diaz</span>
+    </a>
 
-  <button
-    class="menu-toggle"
-    aria-expanded="false"
-    aria-controls="primary-nav"
-    aria-label="Toggle navigation"
-  >
-    ☰
-  </button>
+    <button
+      class="menu-toggle"
+      aria-expanded="false"
+      aria-controls="primary-nav"
+      aria-label="Toggle navigation"
+    >
+      ☰
+    </button>
 
-  <nav
-    id="primary-nav"
-    class="nav"
-    aria-label="Primary navigation"
-  >
-    <a href="#about">About me</a>
-    <a href="#what">What I do</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+    <nav id="primary-nav" class="nav" aria-label="Primary navigation">
+      <a href="#about">About me</a>
 
+      <!-- Dropdown: What I do -->
+      <div class="nav-item has-submenu">
+        <button
+          class="nav-link submenu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="what-submenu"
+        >
+          What I do
+        </button>
+
+        <div class="submenu" id="what-submenu" role="menu" aria-label="What I do submenu">
+          <a href="#writing" role="menuitem">Technical writing</a>
+          <a href="#projects" role="menuitem">Projects</a>
+          <a href="#creative" role="menuitem">Creative writing</a>
+          <a href="#design" role="menuitem">Design</a>
+          <a href="#gallery" role="menuitem">Gallery</a>
+        </div>
+      </div>
+
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
   <!-- HERO -->
   <main class="hero">
-    <section class="hero-text">
+    <section class="hero-text" id="about">
       <p>I'm <strong>Hugo</strong>, a technical writer focused on making complex digital products clear, usable, and reliable for real users.</p>
 
       <p>With a background in web systems and structured documentation, I translate complex workflows into content teams can build on and users can navigate with confidence.</p>
@@ -61,43 +77,140 @@
       </figure>
     </section>
 
-    <!-- WHAT I DO -->
+    <!-- WHAT I DO (parent section) -->
     <section class="what-i-do" id="what">
-
       <div class="what-inner">
         <h2>What I do</h2>
 
-        <div class="what-grid" aria-label="Technical writing capabilities">
-          <a class="what-card"
-              href="https://drive.google.com/drive/folders/1OtOXzJuXQI_lRlOStRlBUi-FdNLaCP8l?usp=drive_link"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="View example: Structured Documentation Systems">
-            <h3>Content Systems & Documentation</h3>
-            <p>Documentation structures that organize complex rules, processes, and content so they are easy to maintain, update, and reuse.</p>
-            <span class="card-action">View example →</span>
-          </a>
+        <!-- Subsection: Technical writing -->
+        <div class="what-subsection" id="writing">
+          <h3 class="what-subtitle">Technical writing</h3>
 
-          <a class="what-card"
-              href="https://drive.google.com/drive/folders/1Fyykt3aBMPJDE9YEDTTQ-XYhuvGYCwcC?usp=drive_link"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="View example: Instructional & User Guidance Writing">
-            <h3>Explaining Systems to Non-Technical Teams</h3>
-            <p>Clear explanations of technical or procedural systems written for people without technical background.</p>
-          <span class="card-action">View example →</span>
-          </a>
+          <div class="what-grid" aria-label="Technical writing capabilities">
+            <a class="what-card"
+                href="https://drive.google.com/drive/folders/1OtOXzJuXQI_lRlOStRlBUi-FdNLaCP8l?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View example: Structured Documentation Systems">
+              <h3>Content Systems & Documentation</h3>
+              <p>Documentation structures that organize complex rules, processes, and content so they are easy to maintain, update, and reuse.</p>
+              <span class="card-action">View example →</span>
+            </a>
 
-          <a class="what-card"
-              href="https://drive.google.com/drive/folders/1xQNptJ8tC3bifLoOHu1LijXfD7sUsXC7?usp=drive_link"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="View example: Instructional & User Guidance Writing">
-            <h3>Guided User Flows</h3>
-            <p>Step-by-step flows that guide users through rule-based processes and help them complete tasks without confusion.</p>
-          <span class="card-action">View example →</span>
-          </a>
+            <a class="what-card"
+                href="https://drive.google.com/drive/folders/1Fyykt3aBMPJDE9YEDTTQ-XYhuvGYCwcC?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View example: Explaining systems to non-technical teams">
+              <h3>Explaining Systems to Non-Technical Teams</h3>
+              <p>Clear explanations of technical or procedural systems written for people without technical background.</p>
+              <span class="card-action">View example →</span>
+            </a>
+
+            <a class="what-card"
+                href="https://drive.google.com/drive/folders/1xQNptJ8tC3bifLoOHu1LijXfD7sUsXC7?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View example: Guided user flows">
+              <h3>Guided User Flows</h3>
+              <p>Step-by-step flows that guide users through rule-based processes and help them complete tasks without confusion.</p>
+              <span class="card-action">View example →</span>
+            </a>
+          </div>
         </div>
+
+        <!-- Subsection: Projects -->
+        <div class="what-subsection" id="projects">
+          <h3 class="what-subtitle">Projects</h3>
+
+          <div class="what-grid" aria-label="Projects">
+            <a class="what-card" href="#" target="_blank" rel="noopener noreferrer" aria-label="View project: Project 1">
+              <h3>Project title</h3>
+              <p>Short description of scope, your role, and outcome.</p>
+              <span class="card-action">View case study →</span>
+            </a>
+
+            <a class="what-card" href="#" target="_blank" rel="noopener noreferrer" aria-label="View project: Project 2">
+              <h3>Project title</h3>
+              <p>Short description of scope, your role, and outcome.</p>
+              <span class="card-action">View case study →</span>
+            </a>
+
+            <a class="what-card" href="#" target="_blank" rel="noopener noreferrer" aria-label="View project: Project 3">
+              <h3>Project title</h3>
+              <p>Short description of scope, your role, and outcome.</p>
+              <span class="card-action">View case study →</span>
+            </a>
+          </div>
+        </div>
+
+                <!-- Subsection: Creative writing -->
+        <div class="what-subsection" id="creative">
+          <h3 class="what-subtitle">Creative writing</h3>
+
+          <div class="what-grid" aria-label="Creative writing">
+            <a class="what-card" href="creative/short-stories.html" aria-label="Short stories">
+              <h3>Short stories</h3>
+              <p>Fiction pieces and narrative experiments.</p>
+              <span class="card-action">Open →</span>
+            </a>
+
+            <a class="what-card" href="creative/poetry.html" aria-label="Poetry">
+              <h3>Poetry</h3>
+              <p>Selected poems and micro-poems.</p>
+              <span class="card-action">Open →</span>
+            </a>
+
+            <a class="what-card" href="creative/essays.html" aria-label="Essays">
+              <h3>Essays</h3>
+              <p>Personal essays and reflections.</p>
+              <span class="card-action">Open →</span>
+            </a>
+          </div>
+        </div>
+
+
+        <!-- Subsection: Design -->
+        <div class="what-subsection" id="design">
+          <h3 class="what-subtitle">Design</h3>
+
+          <div class="embed" aria-label="Figma embed">
+            <iframe
+              src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/design/oYY78v8W3H7uXP9j5Zw9Uo/focus-photography-club-landing-page?node-id=0-1&t=whaVDgA1lEWhmooA-1"
+              allowfullscreen
+              loading="lazy"
+              title="Figma prototype embed">
+            </iframe>
+          </div>
+
+          <p class="embed-note">
+            If the embed doesn't load:
+            <a href="https://www.figma.com/design/oYY78v8W3H7uXP9j5Zw9Uo/focus-photography-club-landing-page?node-id=0-1&t=whaVDgA1lEWhmooA-1" target="_blank" rel="noopener noreferrer">Open in Figma</a>
+          </p>
+        </div>
+
+        <!-- Subsection: Gallery -->
+        <div class="what-subsection" id="gallery">
+          <h3 class="what-subtitle">Gallery</h3>
+
+          <div class="gallery-grid" aria-label="Image gallery">
+            <button class="gallery-item" type="button" aria-label="Open image 1">
+              <img src="images/gallery/01.webp" alt="Gallery image 1" loading="lazy">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Open image 2">
+              <img src="images/gallery/02.webp" alt="Gallery image 2" loading="lazy">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Open image 3">
+              <img src="images/gallery/03.webp" alt="Gallery image 3" loading="lazy">
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lightbox -->
+      <div class="lightbox" id="lightbox" aria-hidden="true">
+        <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close">×</button>
+        <img id="lightboxImg" alt="">
       </div>
     </section>
   </main>
@@ -137,17 +250,17 @@
         </a>
 
         <a
-            href="https://github.com/HugoGDiaz"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="School GitHub repository"
-          >
-            <svg viewBox="0 0 24 24" role="img">
-              <title>School GitHub repository</title>
-              <path d="M12 .5A12 12 0 0 0 0 12.7c0 5.4 3.4 10 8.2 11.6.6.1.8-.3.8-.6v-2.3c-3.3.8-4-1.4-4-1.4-.5-1.4-1.3-1.7-1.3-1.7-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.3 1.8 1.3 1.1 1.9 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.4-5.3-6.1 0-1.3.4-2.3 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.9 1.2 1.9 1.2 3.2 0 4.7-2.7 5.8-5.3 6.1.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6A12 12 0 0 0 24 12.7 12 12 0 0 0 12 .5z"/>
-            </svg>
-            <span>School </span>
-          </a>
+          href="https://github.com/HugoGDiaz"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="School GitHub repository"
+        >
+          <svg viewBox="0 0 24 24" role="img">
+            <title>School GitHub repository</title>
+            <path d="M12 .5A12 12 0 0 0 0 12.7c0 5.4 3.4 10 8.2 11.6.6.1.8-.3.8-.6v-2.3c-3.3.8-4-1.4-4-1.4-.5-1.4-1.3-1.7-1.3-1.7-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.3 1.8 1.3 1.1 1.9 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.4-5.3-6.1 0-1.3.4-2.3 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.9 1.2 1.9 1.2 3.2 0 4.7-2.7 5.8-5.3 6.1.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6A12 12 0 0 0 24 12.7 12 12 0 0 0 12 .5z"/>
+          </svg>
+          <span>School</span>
+        </a>
 
         <a href="https://www.instagram.com/gabotas/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
           <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
@@ -168,14 +281,13 @@
             </svg>
             <span>Personal</span>
           </a>
-
-          
         </div>
       </div>
 
       <p class="footer-copy">© 2026 Hugo Diaz. All rights reserved.</p>
     </div>
   </footer>
+
   <a href="#top" class="to-top" aria-label="Back to top">↑</a>
 </body>
 </html>
