@@ -184,6 +184,30 @@ body.menu-open { overflow: hidden; }
 }
 
 /* WHAT I DO */
+/* Technical writing card icons */
+.what-card svg {
+  width: 28px;
+  height: 28px;
+  margin-bottom: 10px;
+  color: #a33643;
+  flex-shrink: 0;
+}
+
+/* Ensure proper vertical flow */
+.what-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Optional: slightly tighter spacing on mobile */
+@media (max-width: 600px) {
+  .what-card svg {
+    width: 26px;
+    height: 26px;
+  }
+}
+
 .what-i-do {
   max-width: 1200px;
   margin: 0 auto;
@@ -290,6 +314,38 @@ body.menu-open { overflow: hidden; }
   margin-top: 10px;
   font-size: 0.9rem;
   color: #6b6b6b;
+}
+
+/* Figma preview card */
+.figma-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: #f8f7f5;
+  border: 1px solid #e6e3dd;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.figma-card:hover,
+.figma-card:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+}
+
+.figma-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.figma-cta {
+  display: block;
+  padding: 12px 14px;
+  font-size: 0.9rem;
+  color: #1a1a1a;
+  opacity: 0.8;
 }
 
 /* Gallery (inside What I do) */
@@ -695,3 +751,60 @@ body.menu-open { overflow: hidden; }
   outline: 2px solid #a33643;
   outline-offset: 2px;
 }
+
+/* Figma partial preview (25%) */
+.figma-preview {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #e6e3dd;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #f8f7f5;
+  position: relative;
+}
+
+/* Visible area (crop) */
+.figma-preview__image {
+  max-height: 680px;
+  overflow: hidden;
+  position: relative;
+}
+
+.figma-preview__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Fade overlay */
+.figma-preview__image::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 80px;
+  background: linear-gradient(
+    to bottom,
+    rgba(248,247,245,0),
+    rgba(248,247,245,1)
+  );
+}
+
+/* CTA */
+.figma-preview__cta {
+  display: block;
+  padding: 14px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: #f8f7f5;
+}
+
+/* Hover feedback (desktop) */
+@media (hover: hover) {
+  .figma-preview:hover {
+    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+  }
+}
+
+
