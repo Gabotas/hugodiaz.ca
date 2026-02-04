@@ -46,12 +46,12 @@
           What I do
         </button>
 
-        <div class="submenu" id="what-submenu" role="menu" aria-label="What I do submenu">
-          <a href="#writing" role="menuitem">Technical writing</a>
-          <a href="#projects" role="menuitem">Projects</a>
-          <a href="#creative" role="menuitem">Creative writing</a>
-          <a href="#design" role="menuitem">Design</a>
-          <a href="#gallery" role="menuitem">Gallery</a>
+        <div class="submenu" id="what-submenu" aria-label="What I do submenu">
+          <a href="#writing">Technical writing</a>
+          <a href="#projects">Projects</a>
+          <a href="#creative">Creative writing</a>
+          <a href="#design">Design</a>
+          <a href="#gallery">Gallery</a>
         </div>
       </div>
 
@@ -62,7 +62,7 @@
   <!-- HERO -->
   <main class="hero">
     <section class="hero-text" id="about">
-      <p>I'm <strong>Hugo</strong>, a technical writer focused on making complex digital products clear, usable, and reliable for real users.</p>
+      <p>I'm <strong>Hugo</strong>, I focus on making digital products clear, usable and reliable for real users through comprehensible, simple and inclusive language.</p>
 
       <p>With a background in web systems and structured documentation, I translate complex workflows into content teams can build on and users can navigate with confidence.</p>
       <a href="#contact" class="btn">LET'S GET IN TOUCH</a>
@@ -72,7 +72,7 @@
       <figure class="image-bg">
         <img src="images/prueba1.webp" alt="Hugo Diaz technical writer">
         <figcaption class="photo-caption">
-          Technical writer with hands-on experience in web technologies
+          Technical writer with hands-on experience in web technologies and documentation
         </figcaption>
       </figure>
     </section>
@@ -157,58 +157,126 @@
 
         <!-- Subsection: Projects -->
         <div class="what-subsection" id="projects">
-          <h3 class="what-subtitle">Projects</h3>
+          <h3 class="what-subtitle">Projects I worked on</h3>
 
           <div class="what-grid" aria-label="Projects">
-            <a class="what-card" href="#" target="_blank" rel="noopener noreferrer" aria-label="View project: Project 1">
-              <h3>Project title</h3>
-              <p>Short description of scope, your role, and outcome.</p>
-              <span class="card-action">View case study →</span>
+
+            <!-- Sorsari -->
+            <a
+              class="what-card project-card"
+              href="https://sorsari.net"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View project: Sorsari website"
+            >
+              <div class="project-image">
+                <img
+                  src="images/projects/sorsari.webp"
+                  alt="Sorsari website preview"
+                  loading="lazy"
+                >
+              </div>
+              <h3>Sorsari</h3>
+              <p>Capstone project. A local musician needed a brand-focused website combining visual identity, layout design, and front-end development. Developed in WordPress and using some PHP for customization. Worked as project lead and developer.</p>
+              <span class="card-action">View live site →</span>
             </a>
 
-            <a class="what-card" href="#" target="_blank" rel="noopener noreferrer" aria-label="View project: Project 2">
-              <h3>Project title</h3>
-              <p>Short description of scope, your role, and outcome.</p>
-              <span class="card-action">View case study →</span>
+            <!-- Sabor de los Andes -->
+            <a
+              class="what-card project-card"
+              href="https://sabordelosandes.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View project: Sabor de los Andes website"
+            >
+              <div class="project-image">
+                <img
+                  src="images/projects/sabor-de-los-andes.webp"
+                  alt="Sabor de los Andes website preview"
+                  loading="lazy"
+                >
+              </div>
+              <h3>Sabor de los Andes</h3>
+              <p>(In progress) Website revamp focused on improving structure, clarity, and user experience. I used WordPress and worked on my own as a developer, photographer, copywriter, tester, and designer.</p>
+              <span class="card-action">View site →</span>
             </a>
 
-            <a class="what-card" href="#" target="_blank" rel="noopener noreferrer" aria-label="View project: Project 3">
-              <h3>Project title</h3>
-              <p>Short description of scope, your role, and outcome.</p>
-              <span class="card-action">View case study →</span>
+            <!-- Readit -->
+            <a
+              class="what-card project-card"
+              href="https://hugodiaz.ca/CodeIgniterReadingApp"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View project: Readit application"
+            >
+              <div class="project-image">
+                <img
+                  src="images/projects/readit.webp"
+                  alt="Readit full-stack application preview"
+                  loading="lazy"
+                >
+              </div>
+              <h3>Readit</h3>
+              <p>CRUD web application for writing and reading articles built with PHP, CodeIgniter, and MariaDB.</p>
+              <span class="card-action">View app →</span>
             </a>
+
           </div>
         </div>
 
-                <!-- Subsection: Creative writing -->
+
+        <!-- Subsection: Creative writing -->
         <div class="what-subsection" id="creative">
-          <h3 class="what-subtitle">Creative writing</h3>
+          <h3 class="what-subtitle">I like writing</h3>
 
           <div class="what-grid" aria-label="Creative writing">
-            <a class="what-card" href="creative/short-stories.html" aria-label="Short stories">
-              <h3>Short stories</h3>
-              <p>Fiction pieces and narrative experiments.</p>
-              <span class="card-action">Open →</span>
+
+            <!-- The Nugget -->
+            <a
+              class="what-card writing-card"
+              href="https://thenuggetonline.com/author/hdiaz/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Read articles published in The Nugget"
+            >
+              <h3>The Nugget</h3>
+              <p>Published articles available on The Nugget's website.</p>
+              <span class="card-action">Read articles →</span>
             </a>
 
-            <a class="what-card" href="creative/poetry.html" aria-label="Poetry">
-              <h3>Poetry</h3>
-              <p>Selected poems and micro-poems.</p>
-              <span class="card-action">Open →</span>
+            <!-- Editorial -->
+            <a
+              class="what-card writing-card"
+              href="https://thenuggetonline.com/alberta-overdue-for-minimum-wage-hike-but-balance-crucial/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Read editorial writing"
+            >
+              <h3>Editorial writing</h3>
+              <p>Featured article on a sensitive topic.</p>
+              <span class="card-action">Read →</span>
             </a>
 
-            <a class="what-card" href="creative/essays.html" aria-label="Essays">
-              <h3>Essays</h3>
-              <p>Personal essays and reflections.</p>
-              <span class="card-action">Open →</span>
+            <!-- Personal archive -->
+            <a
+              class="what-card writing-card"
+              href="https://hugodiaz.ca/MobileFrameworkTheNuggetLab/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View personal writing archive"
+            >
+              <h3>Writing archive</h3>
+              <p>All articles I wrote in a colorful layout.</p>
+              <span class="card-action">Open archive →</span>
             </a>
           </div>
         </div>
+
 
 
         <!-- Subsection: Design -->
         <div class="what-subsection" id="design">
-          <h3 class="what-subtitle">A landing page I designed</h3>
+          <h3 class="what-subtitle">I also design</h3>
 
           <a
             class="figma-preview"
@@ -307,7 +375,7 @@
 
       <!-- Lightbox -->
       <div class="lightbox" id="lightbox" aria-hidden="true">
-        <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close">×</button>
+        <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close">x</button>
         <img id="lightboxImg" alt="">
       </div>
     </section>
@@ -318,7 +386,7 @@
     <div class="footer-inner">
       <h2>Contact me</h2>
       <p class="footer-intro">
-        Have a project or role in mind? Send a message and I'll get back to you.
+        Like what you see? Have a role in mind for me? Let me know!
       </p>
 
       <form class="contact-form" action="#" method="post">

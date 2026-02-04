@@ -1,23 +1,27 @@
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* =========================================
+   RESET + VARIABLES + BASE
+========================================= */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* VARIABLES */
 :root {
   --font-sans: "Poppins", system-ui, -apple-system, sans-serif;
   --font-serif: "Roboto Slab", serif;
+
+  --bg: #faf9f6;
+  --surface: #f8f7f5;
+  --surface-2: #f2f1ed;
+  --text: #1a1a1a;
+  --muted: #6b6b6b;
+  --border: #e6e3dd;
+  --accent: #a33643;
 }
 
-/* BASE */
 html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font-sans);
-  background: #faf9f6;
-  color: #1a1a1a;
+  background: var(--bg);
+  color: var(--text);
   line-height: 1.6;
 }
 
@@ -27,7 +31,11 @@ img {
   display: block;
 }
 
-/* BACK TO TOP */
+body.menu-open { overflow: hidden; }
+
+/* =========================================
+   BACK TO TOP
+========================================= */
 .to-top {
   position: fixed;
   right: 18px;
@@ -39,7 +47,7 @@ img {
   display: grid;
   place-items: center;
 
-  background: #a33643;
+  background: var(--accent);
   color: #fff;
   text-decoration: none;
   font-size: 1.1rem;
@@ -59,14 +67,15 @@ img {
   transform: translateY(0);
 }
 
-/* LAYOUT CONTAINER */
+/* =========================================
+   HEADER + NAV
+========================================= */
 .header,
 .hero {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* HEADER */
 .header {
   padding: 24px;
   display: flex;
@@ -102,12 +111,12 @@ img {
 
 .nav a {
   text-decoration: none;
-  color: #1a1a1a;
+  color: var(--text);
   font-weight: 500;
   font-family: var(--font-sans);
 }
 
-/* Hamburger button (fix blue on mobile) */
+/* Hamburger button */
 .menu-toggle {
   display: none;
   background: none;
@@ -115,15 +124,57 @@ img {
   color: inherit;
   font-size: 1.6rem;
   cursor: pointer;
-
   -webkit-appearance: none;
   appearance: none;
   -webkit-tap-highlight-color: transparent;
 }
 
-body.menu-open { overflow: hidden; }
+/* Desktop dropdown */
+.has-submenu { position: relative; }
 
-/* HERO */
+.nav-link.submenu-toggle {
+  background: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  font-weight: 500;
+  font-family: var(--font-sans);
+  padding: 0;
+}
+
+.submenu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  min-width: 220px;
+
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 10px;
+
+  display: none;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+  z-index: 1200;
+}
+
+.submenu a {
+  display: block;
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.submenu a:hover,
+.submenu a:focus-visible { background: var(--surface-2); }
+
+.has-submenu.is-open .submenu { display: block; }
+
+/* =========================================
+   HERO
+========================================= */
 .hero {
   padding: 80px 24px;
   display: grid;
@@ -135,24 +186,22 @@ body.menu-open { overflow: hidden; }
 .hero-text p {
   margin-bottom: 24px;
   font-size: 1.1rem;
-  font-family: var(--font-sans);
 }
 
 .hero-text strong { font-weight: 700; }
 
 .btn {
   display: inline-block;
-  background: #a33643;
+  background: var(--accent);
   color: #fff;
   padding: 14px 24px;
   border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
-  font-family: var(--font-sans);
   letter-spacing: 0.02em;
 }
 
-/* HERO IMAGE */
+/* Hero image */
 .hero-image {
   display: flex;
   justify-content: flex-end;
@@ -163,7 +212,7 @@ body.menu-open { overflow: hidden; }
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  background: #f8f7f5;
+  background: var(--surface);
   border-radius: 16px;
 }
 
@@ -177,41 +226,19 @@ body.menu-open { overflow: hidden; }
 .photo-caption {
   margin-top: 12px;
   font-size: 0.85rem;
-  color: #6b6b6b;
+  color: var(--muted);
   font-style: italic;
   text-align: center;
   max-width: 320px;
 }
 
-/* WHAT I DO */
-/* Technical writing card icons */
-.what-card svg {
-  width: 28px;
-  height: 28px;
-  margin-bottom: 10px;
-  color: #a33643;
-  flex-shrink: 0;
-}
-
-/* Ensure proper vertical flow */
-.what-card {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-/* Optional: slightly tighter spacing on mobile */
-@media (max-width: 600px) {
-  .what-card svg {
-    width: 26px;
-    height: 26px;
-  }
-}
-
+/* =========================================
+   WHAT I DO (all subsections)
+========================================= */
 .what-i-do {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 24px 10px;
+  padding: 40px 24px 28px;
   grid-column: 1 / -1;
 }
 
@@ -225,6 +252,17 @@ body.menu-open { overflow: hidden; }
   margin-bottom: 12px;
 }
 
+.what-subsection {
+  margin-top: 44px;           
+}
+
+.what-subtitle {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  margin: 0 0 14px;        
+}
+
+/* Grid of cards */
 .what-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -232,19 +270,22 @@ body.menu-open { overflow: hidden; }
 }
 
 @media (min-width: 1200px) {
-  .what-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  .what-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 .what-card {
-  display: block;
+  display: flex;             
+  flex-direction: column;
+  gap: 6px;
+
   text-decoration: none;
   color: inherit;
-  background: #f8f7f5;
-  border: 1px solid #e6e3dd;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 18px;
+
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
@@ -256,11 +297,11 @@ body.menu-open { overflow: hidden; }
 
 .what-card h3 {
   font-size: 1rem;
-  margin-bottom: 8px;
+  margin-bottom: 2px;
 }
 
 .what-card p {
-  color: #6b6b6b;
+  color: var(--muted);
   font-size: 0.95rem;
   line-height: 1.5;
 }
@@ -273,90 +314,100 @@ body.menu-open { overflow: hidden; }
 }
 
 @media (min-width: 768px) {
-  .card-action {
-    opacity: 0;
-    transition: opacity 0.15s ease;
-  }
+  .card-action { opacity: 0; transition: opacity 0.15s ease; }
   .what-card:hover .card-action,
-  .what-card:focus-visible .card-action {
-    opacity: 0.75;
-  }
+  .what-card:focus-visible .card-action { opacity: 0.75; }
 }
 
-/* Subsections inside What I do */
-.what-subsection {
-  margin-top: 34px;
+/* Technical writing icons */
+.what-card svg {
+  width: 28px;
+  height: 28px;
+  margin-bottom: 10px;
+  color: var(--accent);
+  flex-shrink: 0;
 }
 
-.what-subtitle {
-  font-family: var(--font-serif);
-  font-size: 1.05rem;
-  margin: 16px 0 12px;
+@media (max-width: 600px) {
+  .what-card svg { width: 26px; height: 26px; }
 }
 
-/* Figma embed (inside What I do) */
-.embed {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: 16px;
+/* Project cards*/
+.project-image {
+  border-radius: 14px;
   overflow: hidden;
-  border: 1px solid #e6e3dd;
-  background: #f8f7f5;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  margin-bottom: 10px;
 }
 
-.embed iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-.embed-note {
-  margin-top: 10px;
-  font-size: 0.9rem;
-  color: #6b6b6b;
-}
-
-/* Figma preview card */
-.figma-card {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  background: #f8f7f5;
-  border: 1px solid #e6e3dd;
-  border-radius: 16px;
-  overflow: hidden;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.figma-card:hover,
-.figma-card:focus-visible {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
-}
-
-.figma-card img {
+.project-image img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-.figma-cta {
+/* =========================================
+   FIGMA PREVIEW (Design section)
+========================================= */
+.figma-preview {
   display: block;
-  padding: 12px 14px;
-  font-size: 0.9rem;
-  color: #1a1a1a;
-  opacity: 0.8;
+  text-decoration: none;
+  color: inherit;
+
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--surface);
+  position: relative;
 }
 
-/* Gallery (inside What I do) */
+.figma-preview__image {
+  max-height: 680px;
+  overflow: hidden;
+  position: relative;
+}
+
+.figma-preview__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.figma-preview__image::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 80px;
+  background: linear-gradient(to bottom, rgba(248,247,245,0), rgba(248,247,245,1));
+}
+
+.figma-preview__cta {
+  display: block;
+  padding: 14px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: var(--surface);
+}
+
+@media (hover: hover) {
+  .figma-preview:hover { box-shadow: 0 6px 16px rgba(0,0,0,0.06); }
+}
+
+/* =========================================
+   GALLERY + LIGHTBOX
+========================================= */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
 }
 
+#gallery { margin-bottom: 24px; }
+
 .gallery-item {
-  border: 1px solid #e6e3dd;
+  border: 1px solid var(--border);
   border-radius: 16px;
   overflow: hidden;
   padding: 0;
@@ -405,57 +456,16 @@ body.menu-open { overflow: hidden; }
   font-size: 34px;
   background: transparent;
   border: 0;
-  color: white;
+  color: #fff;
   cursor: pointer;
 }
 
-/* NAV dropdown (desktop) */
-.has-submenu { position: relative; }
-
-.nav-link.submenu-toggle {
-  background: none;
-  border: 0;
-  color: inherit;
-  font: inherit;
-  cursor: pointer;
-  font-weight: 500;
-  font-family: var(--font-sans);
-  padding: 0;
-}
-
-.submenu {
-  position: absolute;
-  top: calc(100% + 10px);
-  left: 0;
-  min-width: 220px;
-  background: #faf9f6;
-  border: 1px solid #e6e3dd;
-  border-radius: 14px;
-  padding: 10px;
-  display: none;
-  box-shadow: 0 10px 22px rgba(0,0,0,0.08);
-  z-index: 1200;
-}
-
-.submenu a {
-  display: block;
-  padding: 10px 10px;
-  border-radius: 10px;
-  text-decoration: none;
-  color: #1a1a1a;
-}
-
-.submenu a:hover,
-.submenu a:focus-visible {
-  background: #f2f1ed;
-}
-
-.has-submenu.is-open .submenu { display: block; }
-
-/* FOOTER */
+/* =========================================
+   FOOTER / CONTACT
+========================================= */
 .footer {
-  background: #f2f1ed;
-  margin-top: 80px;
+  background: var(--surface-2);
+  margin-top: 36px;          
   padding: 80px 24px;
 }
 
@@ -472,7 +482,7 @@ body.menu-open { overflow: hidden; }
 
 .footer-intro {
   margin-bottom: 32px;
-  color: #6b6b6b;
+  color: var(--muted);
 }
 
 .contact-form {
@@ -495,21 +505,19 @@ body.menu-open { overflow: hidden; }
 }
 
 .contact-form input,
-.contact-form textarea {
-  border: 1px solid #ddd;
-}
+.contact-form textarea { border: 1px solid #ddd; }
 
 .contact-form textarea { resize: vertical; }
 
 .contact-form button {
-  background: #a33643;
+  background: var(--accent);
   color: #fff;
   border: none;
   font-weight: 600;
   cursor: pointer;
 }
 
-/* SOCIAL LINKS */
+/* Social links */
 .socials {
   display: flex;
   justify-content: center;
@@ -524,16 +532,16 @@ body.menu-open { overflow: hidden; }
   justify-content: center;
   gap: 8px;
   text-decoration: none;
-  color: #1a1a1a;
+  color: var(--text);
   line-height: 1;
 }
 
-.socials a:visited { color: #1a1a1a; }
+.socials a:visited { color: var(--text); }
 
 .socials svg {
   width: 22px;
   height: 22px;
-  fill: #1a1a1a;
+  fill: var(--text);
   transition: opacity 0.2s ease;
   display: block;
 }
@@ -556,7 +564,9 @@ body.menu-open { overflow: hidden; }
   color: #888;
 }
 
-/* ACCESSIBILITY */
+/* =========================================
+   ACCESSIBILITY
+========================================= */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -565,7 +575,9 @@ body.menu-open { overflow: hidden; }
   clip: rect(0, 0, 0, 0);
 }
 
-/* RESPONSIVE */
+/* =========================================
+   RESPONSIVE
+========================================= */
 @media (max-width: 1199px) {
   .hero { gap: 48px; }
   .hero-image img { max-width: 360px; }
@@ -590,11 +602,9 @@ body.menu-open { overflow: hidden; }
 
   .photo-caption { max-width: 420px; }
 
-  .what-i-do { padding: 20px 24px 0; }
-  .what-grid { grid-template-columns: 1fr; }
+  .what-i-do { padding: 20px 24px 22px; }
 }
 
-/* ✅ REFACTORED MOBILE NAV (fix submenu design) */
 @media (max-width: 900px) {
   .menu-toggle {
     display: block;
@@ -603,27 +613,25 @@ body.menu-open { overflow: hidden; }
   }
 
   .nav {
-    /* fullscreen overlay stays, but layout becomes a proper menu panel */
     position: fixed;
     inset: 0;
     width: 100vw;
     height: 100vh;
-    background: #faf9f6;
+    background: var(--bg);
     z-index: 1000;
 
-    display: none;                /* controlled by .is-open */
+    display: none;
     flex-direction: column;
-    justify-content: flex-start;  /* not centered */
-    align-items: stretch;         /* full-width rows */
+    justify-content: flex-start;
+    align-items: stretch;
     gap: 10px;
 
-    padding: 90px 18px 24px;      /* space for header area */
+    padding: 90px 18px 24px;
     overflow-y: auto;
   }
 
   .nav.is-open { display: flex; }
 
-  /* top-level rows */
   .nav > a,
   .nav .submenu-toggle {
     width: 100%;
@@ -633,25 +641,23 @@ body.menu-open { overflow: hidden; }
     padding: 14px 16px;
     border-radius: 14px;
 
-    background: #f8f7f5;
-    border: 1px solid #e6e3dd;
+    background: var(--surface);
+    border: 1px solid var(--border);
 
     text-align: left;
     font-size: 1.1rem;
     line-height: 1.2;
   }
 
-  /* keep link color consistent */
-  .nav > a { color: #1a1a1a; }
+  .nav > a { color: var(--text); }
 
-  /* button looks like row */
   .nav-link.submenu-toggle {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 14px 16px;
   }
 
-  /* chevron */
   .nav-link.submenu-toggle::after {
     content: "▾";
     font-size: 1.1rem;
@@ -660,14 +666,11 @@ body.menu-open { overflow: hidden; }
     transition: transform 0.15s ease;
   }
 
-  .has-submenu.is-open .nav-link.submenu-toggle::after {
-    transform: rotate(180deg);
-  }
+  .has-submenu.is-open .nav-link.submenu-toggle::after { transform: rotate(180deg); }
 
-  /* submenu becomes accordion area */
   .submenu {
     position: static;
-    display: block; /* we collapse using max-height */
+    display: block;
     width: 100%;
     max-width: 520px;
     margin: 0 auto;
@@ -683,11 +686,8 @@ body.menu-open { overflow: hidden; }
     text-align: left;
   }
 
-  .has-submenu.is-open .submenu {
-    max-height: 320px;
-  }
+  .has-submenu.is-open .submenu { max-height: 320px; }
 
-  /* submenu items (indented) */
   .submenu a {
     display: block;
     margin-top: 8px;
@@ -695,18 +695,16 @@ body.menu-open { overflow: hidden; }
     padding: 12px 16px 12px 34px;
     border-radius: 14px;
 
-    background: #ffffff;
-    border: 1px solid #e6e3dd;
+    background: #fff;
+    border: 1px solid var(--border);
 
     font-size: 1rem;
-    color: #1a1a1a;
+    color: var(--text);
     text-decoration: none;
   }
 
   .submenu a:hover,
-  .submenu a:focus-visible {
-    background: #f2f1ed;
-  }
+  .submenu a:focus-visible { background: var(--surface-2); }
 }
 
 @media (max-width: 767px) {
@@ -730,81 +728,3 @@ body.menu-open { overflow: hidden; }
   .hero { padding: 36px 16px; }
   .photo-caption { font-size: 0.8rem; }
 }
-
-.embed-note a {
-  display: inline-block;
-  margin-left: 6px;
-  padding: 4px 10px;
-  border-radius: 999px;
-  border: 1px solid #e6e3dd;
-  background: #f8f7f5;
-  color: #1a1a1a;
-  text-decoration: none;
-  font-size: 0.85rem;
-}
-
-.embed-note a:hover {
-  background: #f2f1ed;
-}
-
-.embed-note a:focus-visible {
-  outline: 2px solid #a33643;
-  outline-offset: 2px;
-}
-
-/* Figma partial preview (25%) */
-.figma-preview {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  border: 1px solid #e6e3dd;
-  border-radius: 16px;
-  overflow: hidden;
-  background: #f8f7f5;
-  position: relative;
-}
-
-/* Visible area (crop) */
-.figma-preview__image {
-  max-height: 680px;
-  overflow: hidden;
-  position: relative;
-}
-
-.figma-preview__image img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Fade overlay */
-.figma-preview__image::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 0 0;
-  height: 80px;
-  background: linear-gradient(
-    to bottom,
-    rgba(248,247,245,0),
-    rgba(248,247,245,1)
-  );
-}
-
-/* CTA */
-.figma-preview__cta {
-  display: block;
-  padding: 14px;
-  text-align: center;
-  font-size: 0.9rem;
-  font-weight: 500;
-  background: #f8f7f5;
-}
-
-/* Hover feedback (desktop) */
-@media (hover: hover) {
-  .figma-preview:hover {
-    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
-  }
-}
-
-
